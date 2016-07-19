@@ -1,0 +1,55 @@
+.ant-layout-header {
+  background: #fff;
+  .header-menu {
+    > li {
+      float: right;
+    }
+  }
+}
+
+// .ant-layout-wrapper {
+//   padding: 0 0 0 50px;
+// }
+// .ant-layout-wrapper .ant-layout-header {
+//   background: #404040;
+//   height: 64px;
+// }
+// .ant-layout-wrapper .ant-layout-logo {
+//   position: relative;
+//   width: 200px;
+//   height: 32px;
+//   border-radius: 6px;
+//   margin: 16px 28px 16px 0;
+//   padding: 6px 0px 0 55px;
+//   float: left;
+// }
+
+// .ant-layout-wrapper .ant-layout-logo img {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 100%;
+// }
+
+.top-nav-img {
+  width: 20px;
+  margin-right: 3px;
+  position: relative;
+  top: 5px;
+  left: 0;
+}
+
+// 顶部导航因为Link表单导致激活颜色问题，这里强制设置激活颜色
+.ant-menu-item-selected > a, .ant-menu-item-selected > a:hover {
+  color: #2db7f5 !important;
+}
+
+// 菜单
+.ant-layout-header .ant-layout-wrapper .collapse-icon {
+    line-height: 64px;
+    padding-top: 20px;
+    float: left;
+    margin: 0 20px 0 20px;
+    font-size: 20px;
+    cursor: pointer;
+}

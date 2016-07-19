@@ -1,0 +1,106 @@
+// .ant-layout-aside .ant-layout-logo {
+//   width: 150px;
+//   height: 32px;
+//   background: #333;
+//   border-radius: 6px;
+//   margin: 16px 24px 16px 28px;
+// }
+
+
+// .ant-layout-aside .ant-layout-sider {
+//   width: 224px;
+//   background: #404040;
+//   position: absolute;
+//   overflow: auto;
+//   padding-bottom: 24px;
+//   height: 100%;
+// }
+
+// .ant-layout-aside .ant-layout-sider > .ant-menu {
+//   margin-bottom: 20px;
+// }
+
+/*********************/
+.nav-text {
+  vertical-align: baseline;
+  display: inline-block;
+  white-space: nowrap;
+}
+.ant-layout-logo {
+  position: relative;
+  width: 150px;
+  height: 32px;
+  // background: #333;
+  color: #999;
+  border-radius: 6px;
+  margin: 16px 24px 16px 28px;
+  padding: 7px 0px 0 60px;
+  transition: all 0.3s ease;
+}
+.ant-layout-logo > img {
+  position: absolute;
+  top: 0;
+  left: -11px;
+  height: 100%;
+}
+
+.ant-layout-sider {
+  width: 224px;
+  background: #404040;
+  position: absolute;
+  overflow: visible;
+  padding-bottom: 24px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+.nav-portrait img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  transition: all 1s ease;
+}
+
+
+// 头像
+.nav-portrait {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  transition: all 3s ease;
+}
+.nav-portrait img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  transition: all 1s ease;
+}
+.nav-portrait-title {
+  color: #ccc;
+  text-align: center;
+  cursor: pointer;
+  transition: all 3s ease;
+}
+.nav-portrait-title:hover {
+  text-decoration: underline;
+}
+.nav-portrait-name {
+  color: #2db7f5;
+  text-align: center;
+  transition: all 3s ease;
+}
+
+
+.ant-layout-aside-collapse .ant-layout-sider  > .ant-layout-portrait > .nav-portrait {
+  height: 32px;
+  transition: all 3s ease;
+}
+.ant-layout-aside-collapse .ant-layout-sider  > .ant-layout-portrait > .nav-portrait img {
+  width: 32px;
+  height: 32px;
+  transition: all 0s ease;
+}
+.ant-layout-aside-collapse .ant-layout-sider  > .ant-layout-portrait > .nav-portrait-title,
+.ant-layout-aside-collapse .ant-layout-sider  > .ant-layout-portrait > .nav-portrait-name {
+  display: none;
+  transition: all 3s ease;
+}
