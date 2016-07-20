@@ -9,13 +9,10 @@ import Sidebar from '../../components/Sidebar';
 import Footer from '../../components/Footer';
 
 // import { fetchProfile, logout } from '../../store/modules/user/user_action';
-
-
-
 import 'antd/dist/antd.less';
-// import './index.less';
+
 import styles from './index.less';
-// console.log('styles', styles['ant-layout-aside']);
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -44,21 +41,6 @@ class App extends React.Component {
   render() {
     const {user, actions} = this.props;
     const { collapse } = this.props; // 判断侧边栏隐藏显示
-
-    // return (
-    //   <div className={collapse ? "ant-layout-aside ant-layout-aside-collapse" : "ant-layout-aside"}>
-    //     <Sidebar />
-    //     <div className="ant-layout-main">
-    //       <Header user={user} />
-    //       <NavPath />
-    //       <div className="ant-layout-container">
-    //         <div className="ant-layout-content">
-    //           {this.props.children}
-    //         </div>
-    //       </div>
-    //       <Footer />
-    //     </div>
-    //   </div>
     
     return (
       <div className={collapse ? styles["ant-layout-aside"] + ' ' + styles["ant-layout-aside-collapse"] : styles["ant-layout-aside"]}>

@@ -3,14 +3,7 @@ import { routerReducer } from 'react-router-redux';
 
 import user from './modules/user/user_reducer';
 import menu from './modules/menu/menu_reducer';
-import myCase from './modules/myCase/my_case_reducer';
-import myTask from './modules/myTask/my_task_reducer';
-import myFocus from './modules/myFocus/my_focus_reducer';
-import addCase from './modules/addCase/add_case_reducer';
-import caseManage from './modules/caseManage/case_manage_reducer';
-import caseGroup from './modules/caseGroup/case_group_reducer';
-import caseDetail from './modules/caseDetail/case_detail_reducer';
-import caseRank from './modules/caseRank/case_rank_reducer';
+
 /**
  * combineReducers(reducers)
  * 
@@ -46,15 +39,5 @@ import caseRank from './modules/caseRank/case_rank_reducer';
 export default combineReducers({
   user,
   menu,
-
-  caseManage,
-  caseGroup,
-  caseDetail,
-  caseRank,
-
-  myCase,
-  myTask,
-  addCase,
-  myFocus,
   routing: routerReducer
 });
