@@ -61,48 +61,6 @@ export function getCaseMenu() {
 }
 
 /**
- * 获取cese侧边菜单数据(我的发布、我的case、我的关注) 
- * 目前添加case侧边菜单不需要数据，所以先传一个空菜单
- * 
- * @export
- * @returns
- */
-export function getAddCaseLeftMenu() {
-  return {
-    type: types.GET_ADD_CASE_LEFT_MENU,
-    payload: {
-      leftMenu: emptyMenu
-    }
-  }
-}
-
-/**
- * 
- * 获取 `我的管理侧边菜单` 的统计数据
- * 我的管理统计数据是独立的接口，所以在 `Action` 中开一个独立的动作
- *
- * 优化：
- * 可以通过传参来判断需要访问那个接口
- * type = myCase、myTask、myFocu、manage
- * 判断type类型获取相应的结果刷新 `State`
- * 
- * @export
- * @param {any} param
- * @returns
- */
-export function getCaseManageMenu(param) {
-  return {
-    type: types.GET_MANAGE_LEFT_MENU,
-    payload: {
-      promise: api.get('report/all_page', { params: param })
-    },
-    params: {
-      leftMenu: caseMenu
-    }
-  }
-}
-
-/**
  * 侧栏菜单的隐藏显示控制 
  * 
  * 通过点击切换按钮触发该功能

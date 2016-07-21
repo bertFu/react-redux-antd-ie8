@@ -4,7 +4,7 @@ const Panel = Collapse.Panel;
 
 // import {Line,Pie,Doughnut} from 'react-chartjs';
 
-import styles from'./index.less'
+import styles from './index.less'
 
 const chartOption = {
   responsive: true

@@ -74,7 +74,7 @@ export default createReducer(initialState, {
   },
 
   [`${types.GET_LEFT_MENU}`]: (state, data, params) => {
-    return objectAssign({}, state, { leftMenu: params.leftMenu })
+    return objectAssign({}, state, { leftMenu: params.leftMenu });
   },
 
   [`${types.INIT_MENU}`]: (state, data, params) => {

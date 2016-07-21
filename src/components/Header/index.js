@@ -56,19 +56,6 @@ class Header extends React.Component {
      * 因为在导航前加入了标记，所以这里判断时也需要加入 `sub` 标记 
      * 
      */
-    switch (item.key) {
-      case 'myMain':
-        // 获取我的发布数据
-        // 获取边栏菜单数据
-      break;
-      case 'submanage':
-        // 获取case管理数据
-        // 获取边栏菜单数据
-      break;
-      case 'sub' + 'index.html':
-        window.open("/index.html");
-      break;
-    }
     
     /**
      * 默认情况更改 `面包屑` 信息

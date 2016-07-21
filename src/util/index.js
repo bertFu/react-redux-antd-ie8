@@ -39,6 +39,8 @@ export function createReducer (initialparams, reducerMap) {
     /*
       TODP：判断 `请求` 返回的 `Code` 显示服务端提示信息。
      */
+    
+    // console.log('action', action);
     if (!action.error && action.payload && action.payload.code && action.payload.code != '0') {
       message.error(action.payload.message);
       if (params.get('loading')) {

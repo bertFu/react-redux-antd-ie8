@@ -2,8 +2,7 @@ import {getCookie} from '../../../util';
 import types from '../../types';
 
 import reqwest from 'reqwest';
-// import AG_CONF from '../../../constants/AgCode';
-// import OPERATOR_INFO from '../../../constants/OperatorInfo';
+import { getLogin } from '../../../services/todos';
 
 /**
  * 判断 `cookis` 中是否有 `uid` 没有触发没有发现 `uid` 的 `Action`
@@ -35,16 +34,8 @@ export function fetchProfile() {
 export function login(user, password) {
   return {
     type: types.LOGIN,
-    // payload: {
-    //   promise: api.put('/login', {
-    //     data: {
-    //       user: user,
-    //       password: password
-    //     }
-    //   })
-    // }
     payload: {
-      user: 'admin'
+      promise: getLogin()
     }
   }
 }

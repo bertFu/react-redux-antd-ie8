@@ -24,10 +24,10 @@ export default createReducer(initialState, {
   },
 
   [`${types.LOGIN}_SUCCESS`]: (state, data) => {
-    
+    console.log('data', data);
     return objectAssign({}, state, {
       loggingIn : true,
-      user: data.conten.user,
+      user: data.jsonResult.data,
       loginErrors: null
     })
   },

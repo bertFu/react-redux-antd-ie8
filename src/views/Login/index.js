@@ -2,12 +2,12 @@ import React, { PropTypes } from 'react';
 import { Form, Input, Button, Row, Col, notification, Checkbox } from 'antd';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-// import { login } from '../../actions/user';
+
 import { login } from '../../store/modules/user/user_action';
 
 const FormItem = Form.Item;
 
-import './index.less';
+import styles from './index.less'
 
 const propTypes = {
   user: PropTypes.string,
@@ -56,7 +56,7 @@ class Login extends React.Component {
     }
 
     if (user) {
-      this.context.router.replace('/myMain');
+      this.context.router.replace('/home');
     }
   }
 
@@ -74,9 +74,9 @@ class Login extends React.Component {
   render() {
     const { getFieldProps } = this.props.form
     return (
-      <Row className="login-row" type="flex" justify="space-around" align="middle">
+      <Row className={styles["login-row"]} type="flex" justify="space-around" align="middle">
         <Col span="9">
-          <Form horizontal onSubmit={this.handleSubmit.bind(this) } className="login-form">
+          <Form horizontal onSubmit={this.handleSubmit.bind(this) } className={styles["login-form"]}>
             <FormItem>
               <Row>
                 <Col span='8' offset='12'>
@@ -93,7 +93,7 @@ class Login extends React.Component {
               </Row>
             </FormItem>
 
-            <Row className="check-margin">
+            <Row className={styles["check-margin"]}>
               <Col span='16' offset='12'>
                 <Checkbox {...getFieldProps('agreement') }>记住账号密码</Checkbox>
               </Col>
