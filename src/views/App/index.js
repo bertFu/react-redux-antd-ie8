@@ -8,9 +8,8 @@ import Header from '../../components/Header';
 import Sidebar from '../../components/Sidebar';
 import Footer from '../../components/Footer';
 
-// import { fetchProfile, logout } from '../../store/modules/user/user_action';
-import 'antd/dist/antd.less';
-
+import { fetchProfile, logout } from '../../store/modules/user/user_action';
+// import 'antd/dist/antd.less';
 import styles from './index.less';
 
 class App extends React.Component {
@@ -23,7 +22,7 @@ class App extends React.Component {
    */
   componentWillMount() {
     const {actions} = this.props;
-    // actions.fetchProfile();
+    actions.fetchProfile();
   }
   /**
    * 监听porps
@@ -33,10 +32,10 @@ class App extends React.Component {
    * @param {any} nextProps
    */
   componentWillReceiveProps(nextProps) {
-    // const loggingOut = nextProps.loggingOut;
-    // if (loggingOut) {
-    //   window.location.href = '/';
-    // }
+    const loggingOut = nextProps.loggingOut;
+    if (loggingOut) {
+      window.location.href = '/';
+    }
   }
   render() {
     const {user, actions} = this.props;
@@ -71,17 +70,17 @@ App.contextTypes = {
 };
 
 const mapStateToProps = (state) => {
-  // const {user} = state;
+  const {user} = state;
   return {
-  //   user: user ? user : null,
-  //   loggingOut: user.loggingOut,
-  //   collapse: state.menu.collapse
+    user: user ? user : null,
+    loggingOut: user.loggingOut,
+    // collapse: state.menu.collapse
   };
 };
 
 function mapDispatchToProps(dispatch) {
   return {
-    // actions: bindActionCreators({ fetchProfile, logout }, dispatch)
+    actions: bindActionCreators({ fetchProfile, logout }, dispatch)
   };
 }
 

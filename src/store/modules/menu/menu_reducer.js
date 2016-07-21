@@ -2,12 +2,12 @@ import _ from 'lodash';
 import { message } from 'antd';
 import { createReducer } from '../../../util';
 import types from '../../types';
-import InitState from './menu_state';
+import initialState from './menu_state';
+import objectAssign from 'object-assign';
 
-export default createReducer(new InitState, {
+export default createReducer(initialState, {
   [`${types.GET_TOP_MENU}_SUCCESS`]: (state, data) => {
-    console.log('data', data)
-    return state.set('topMenu', data.content)
+    return objectAssign({}, state, { topMenu: data.content });
   },
 
   [`${types.UPDATE_NAVPATH}`]: (state, data) => {
@@ -62,148 +62,35 @@ export default createReducer(new InitState, {
       })
     }
 
-    return state.set('currentIndex', data.key * 1)
-      .set('navpath', navpath)
-      .set('selectClass', selectClass)
+    return objectAssign({}, state, {
+      currentIndex: data.key * 1,
+      navpath: navpath,
+      selectClass: selectClass
+    });
   },
 
   [`${types.UPDATE_STATUS}`]: (state, data) => {
-
-    return state.set('status', data.status)
+    return objectAssign({}, state, { status: data.status });
   },
 
-  [`${types.GET_LEFT_MENU}_SUCCESS`]: (state, data, params) => {
-
-    let report = data.content, leftMenuType;
-    params.leftMenu.map((item) => {
-      switch (item.key) {
-        case 'ongoing':
-          item.num = report.pending || 0;
-          break;
-        case 'completed':
-          item.num = report.finish || 0;
-          break;
-        case 'confirm_completed':
-          item.num = report.confirmFinish || 0;
-          break;
-        case 'closed':
-          item.num = report.closed || 0;
-          break;
-        case 'gratuity':
-          item.num = report.reward || 0;
-          break;
-        case 'thumb_up':
-          item.num = report.likeTotal || 0;
-          break;
-        case 'dislike':
-          item.num = report.booingTotal || 0;
-          break;
-      }
-    })
-
-    switch (params.taskMatch) {
-      case 1:
-        leftMenuType = 'my_case'
-        break;
-      case 2:
-        leftMenuType = 'my_task'
-        break;
-      case 3:
-        leftMenuType = 'my_focus'
-        break;
-
-      default:
-        break;
-    }
-
-    return state.set('leftMenuType', leftMenuType)
-      .set('leftMenu', params.leftMenu)
-  },
-
-  [`${types.GET_MANAGE_LEFT_MENU}_SUCCESS`]: (state, data, params) => {
-
-    let case_manage = data.content;
-
-    params.leftMenu.map((item) => {
-      switch (item.key) {
-        case 'ongoing':
-          item.num = case_manage.pending || 0;
-          break;
-        case 'completed':
-          item.num = case_manage.finish || 0;
-          break;
-        case 'confirm_completed':
-          item.num = case_manage.confirmFinish || 0;
-          break;
-        case 'closed':
-          item.num = case_manage.closed || 0;
-          break;
-        case 'gratuity':
-          item.num = case_manage.reward || 0;
-          break;
-        case 'thumb_up':
-          item.num = case_manage.likeTotal || 0;
-          break;
-        case 'dislike':
-          item.num = case_manage.booingTotal || 0;
-          break;
-      }
-    })
-
-    return state.set('leftMenuType', 'case_manage')
-      .set('leftMenu', params.leftMenu)
-  },
-
-  [`${types.GET_GROUP_STATISTICS}_SUCCESS`]: (state, data, params) => {
-    let case_group = data.content;
-
-    const leftMenu = _.map(params.leftMenu, ((item) => {
-      switch (item.key) {
-        case 'ongoing':
-          item.num = case_group.pending || 0;
-          break;
-        case 'completed':
-          item.num = case_group.finish || 0;
-          break;
-        case 'confirm_completed':
-          item.num = case_group.confirmFinish || 0;
-          break;
-        case 'closed':
-          item.num = case_group.closed || 0;
-          break;
-        case 'gratuity':
-          item.num = case_group.reward || 0;
-          break;
-        case 'thumb_up':
-          item.num = case_group.likeTotal || 0;
-          break;
-        case 'dislike':
-          item.num = case_group.booingTotal || 0;
-          break;
-      }
-      return item;
-    }))
-
-    return state.set('leftMenuType', 'case_group')
-      .set('leftMenu', leftMenu)
+  [`${types.GET_LEFT_MENU}`]: (state, data, params) => {
+    return objectAssign({}, state, { leftMenu: params.leftMenu })
   },
 
   [`${types.INIT_MENU}`]: (state, data, params) => {
 
     params.leftMenu.map((item) => {
       item.num = 0;
-    })
+    });
 
-    return state.set('leftMenuType', '')
+    return objectAssign({}, state, { leftMenuType: leftMenuType });
   },
 
   [`${types.UPDATE_COLLAPSE}`]: (state, data) => {
-
-    return state.set('collapse', !data.collapse)
+    return objectAssign({}, state, { collapse: !data.collapse });
   },
 
   [`${types.GET_ADD_CASE_LEFT_MENU}`]: (state, data) => {
-
-    return state.set('leftMenu', data.leftMenu)
+    return objectAssign({}, state, { leftMenu: leftMenu });
   },
 })

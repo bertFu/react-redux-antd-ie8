@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { Breadcrumb } from 'antd'
 import { connect } from 'react-redux'
 
-import './index.less'
+import styles from './index.less'
 
 const defaultProps = {
   navpath: []
@@ -27,7 +27,7 @@ class NavPath extends React.Component {
     })
     const breadInit = <Breadcrumb.Item key={'bc-myMain'}>我的发布</Breadcrumb.Item>
     return (
-      <div className="ant-layout-breadcrumb">
+      <div className={styles["ant-layout-breadcrumb"]}>
         <Breadcrumb>
           <Breadcrumb.Item key='bc-0'>首页</Breadcrumb.Item>
           {bread.length == 0? breadInit: bread}

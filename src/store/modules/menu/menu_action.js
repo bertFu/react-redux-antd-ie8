@@ -2,9 +2,7 @@ import api from '../../../api';
 import types from '../../types';
 
 import reqwest from 'reqwest';
-import AG_CONF from '../../../constants/AgCode';
-import OPERATOR_INFO from '../../../constants/OperatorInfo';
-import {emptyMenu, caseMenu} from '../../../../fake/leftMenu';
+import {emptyMenu, caseMenu} from '../../../fake/leftMenu';
 
 /**
  * 顶部菜单切换，更新面包屑 
@@ -53,14 +51,10 @@ export function getTopMenu() {
  * @param {any} taskMatchObj
  * @returns
  */
-export function getCaseMenu(taskMatchObj) {
+export function getCaseMenu() {
   return {
     type: types.GET_LEFT_MENU,
-    payload: {
-      promise: api.get('report/my', { params: taskMatchObj })
-    },
     params: {
-      ...taskMatchObj,
       leftMenu: caseMenu
     }
   }

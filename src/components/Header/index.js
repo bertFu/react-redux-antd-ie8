@@ -155,15 +155,7 @@ class Header extends React.Component {
         </Menu.Item>
       )
     });
-    /**
-     * `selectKey` 用于默认显示
-     * 
-     * 优化：
-     * 根据路由规则显示导航状态
-     * 需要在 `state` 中加入 `router` 这样就方便了对全局的管理了
-     * 学习下 `redux-simple-router` 来实现该功能 
-     * 
-     */
+    
     // return (
     //   <div className='ant-layout-header'>
     //     <div className="ant-layout-wrapper">
@@ -198,8 +190,6 @@ Header.propTypes = propTypes;
 Header.defaultProps = defaultProps;
 
 const mapStateToProps = (state) => {
-  // console.log('state.router', state.router);
-  // console.log('state.routing', state.routing);
   return {    
       // topMenu       : state.menu.topMenu,
       // currentIndex  : state.menu.currentIndex,

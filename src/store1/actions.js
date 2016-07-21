@@ -14,7 +14,7 @@ import * as topMenuAction from './modules/topMenu/top_menu_action' // 顶部菜�
 import * as userAction from './modules/user/user_action' // 用户
 
 export default {
-  ...leftMenuAction,
-  ...topMenuAction,
-  ...userAction,
+  // ...leftMenuAction,
+  // ...topMenuAction,
+  // ...userAction,
 }

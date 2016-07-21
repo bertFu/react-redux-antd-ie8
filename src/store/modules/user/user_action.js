@@ -1,10 +1,9 @@
-import api from '../../../api';
 import {getCookie} from '../../../util';
 import types from '../../types';
 
 import reqwest from 'reqwest';
-import AG_CONF from '../../../constants/AgCode';
-import OPERATOR_INFO from '../../../constants/OperatorInfo';
+// import AG_CONF from '../../../constants/AgCode';
+// import OPERATOR_INFO from '../../../constants/OperatorInfo';
 
 /**
  * 判断 `cookis` 中是否有 `uid` 没有触发没有发现 `uid` 的 `Action`
@@ -61,7 +60,7 @@ export function logout() {
   return {
     type: types.LOGOUT,
     payload: {
-      promise: api.post('logout')
+      // promise: api.post('logout')
     }
   }
 }

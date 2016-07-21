@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { routerReducer } from 'react-router-redux';
+// import { routerReducer } from 'react-router-redux';
 
 import user from './modules/user/user_reducer';
 import menu from './modules/menu/menu_reducer';
@@ -39,5 +39,5 @@ import menu from './modules/menu/menu_reducer';
 export default combineReducers({
   user,
   menu,
-  routing: routerReducer
+  // routing: routerReducer
 });
