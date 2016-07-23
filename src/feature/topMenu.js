@@ -1,31 +1,22 @@
 module.exports = [
-        // {
-        //   key: 'releaseTask',
-        //   name: '发起任务',
-        //   icon: 'edit'
-        // },
         {
-          key: 'myMain',
-          name: '我的发布',
+          key: 'home',
+          name: 'Home',
           icon: 'book'
         },
         {
-          key: 'home',
-          name: '我的任务',
+          key: 'test',
+          name: 'Test',
           icon: 'user'
         },
         {
-          key: 'myTask',
-          name: '我的关注',
+          key: 'login',
+          name: 'Login',
           icon: 'eye-o'
         },
         {
-          key: 'manage',
-          name: 'case管理',
+          key: 'test2',
+          name: '404错误',
           icon: 'setting'
-        },{
-          key: 'index.html',
-          name: '返回旧版',
-          icon: 'retweet'
         }
      ]

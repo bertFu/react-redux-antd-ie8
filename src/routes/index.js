@@ -12,7 +12,7 @@ function validate() {
 
 const Routes = ({ history }) =>
   <Router history={history}>
-    
+    <Route path="/login" component={Login}/>
     <Route path="/" onEnter={validate}>
       <IndexRedirect to="home" />
       <Route component={App}>

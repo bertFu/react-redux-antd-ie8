@@ -9,8 +9,8 @@ import { logout } from '../../store/modules/user/user_action';
 
 // import * as Util from '../../util';
 
-import logo from './logo.png'
-import touxiang from './touxiang.png'
+import logo from './logo.jpg'
+import touxiang from './touxiang.jpg'
 
 const SubMenu = Menu.SubMenu
 
@@ -91,10 +91,9 @@ class Sidebar extends React.Component {
     return (
       <aside className={styles["ant-layout-sider"]}>
         <div className={styles["ant-layout-logo"]}><img src={logo} /><span className={styles["nav-text"]}>xxxx后台</span></div>
-        <div className={styles["ant-layout-portrait"]}>
+        <div className={styles["ant-layout-portrait"]} style={{marginBottom: '10px'}}>
           <div className={styles["nav-portrait"]}><img src={touxiang} /></div>
           <div className={styles["nav-portrait-name"]}>admin</div>
-          <div className={styles["nav-portrait-title"]} onClick={this.logout}>注销</div>
         </div>
         <Menu mode="inline" theme="dark" onClick={this.onClick.bind(this) }>
           { menu }

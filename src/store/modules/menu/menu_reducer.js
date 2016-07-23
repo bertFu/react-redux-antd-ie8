@@ -6,8 +6,8 @@ import initialState from './menu_state';
 import objectAssign from 'object-assign';
 
 export default createReducer(initialState, {
-  [`${types.GET_TOP_MENU}_SUCCESS`]: (state, data) => {
-    return objectAssign({}, state, { topMenu: data.content });
+  [`${types.GET_TOP_MENU}`]: (state, data, params) => {
+    return objectAssign({}, state, { topMenu: params.topMenu });
   },
 
   [`${types.UPDATE_NAVPATH}`]: (state, data) => {

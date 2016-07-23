@@ -6,7 +6,7 @@ import styles from './index.less'
 // import styles from './index.less';
 import { Link } from 'react-router'
 
-// import * as menu from '../../store/modules/menu/menu_action'
+import * as menu from '../../store/modules/menu/menu_action'
 
 import logo from './logo.png'
 
@@ -35,7 +35,7 @@ class Header extends React.Component {
     /**
      * 初始化头部菜单，通过服务端获取。
      */
-    // this.props.menu.getTopMenu()
+    this.props.menu.getTopMenu()
   }
     
   menuClickHandle (item) {
@@ -77,53 +77,8 @@ class Header extends React.Component {
   }
   
   render () {
-    // const { topMenu, user, collapse, routing } = this.props
-    // const basename = '/newIndex.html/';
-    // let selectKey = routing.locationBeforeTransitions && routing.locationBeforeTransitions.pathname.split('/')[1]
-    // console.log('selectKey', selectKey);
-    // console.log('routing', routing);
-    // console.log('THIS.PROPS', this.props);
-    
-    const topMenu = [
-            {
-                key: 'add_task',
-                name: '发起任务',
-                icon: 'edit'
-            },
-            {
-                key: 'my_case',
-                name: '我的发布',
-                icon: 'book'
-            },
-            {
-                key: 'my_task',
-                name: '我的任务',
-                icon: 'user'
-            },
-            {
-                key: 'my_focus',
-                name: '我的关注',
-                icon: 'eye-o'
-            },
-            {
-                key: 'case_manage',
-                name: 'case管理',
-                icon: 'setting'
-            }, {
-                key: 'case_group',
-                name: '分组管理',
-                icon: 'tags-o'
-            }, {
-                key: 'case_rank',
-                name: '统计排名',
-                icon: 'line-chart'
-            }, {
-                key: 'index.html',
-                name: '返回旧版',
-                icon: 'retweet'
-            }
-        ];  
-     
+    const { topMenu } = this.props;
+     console.log('topMenu', topMenu);
     const menu = topMenu.map((item) => {
       /**
        * 遍历 `topMenu` 显示顶部信息
@@ -177,58 +132,19 @@ Header.propTypes = propTypes;
 Header.defaultProps = defaultProps;
 
 const mapStateToProps = (state) => {
+  console.log('state', state);
   return {    
-      // topMenu       : state.menu.topMenu,
+      topMenu       : state.menu.topMenu,
       // currentIndex  : state.menu.currentIndex,
       // collapse      : state.menu.collapse,
-      // selectKey     : state.menu.selectKey,
-      
-      // router        : state.router,
-      // routing       : state.routing,
+      // selectKey     : state.menu.selectKey
   };
 };
 
 function mapDispatchToProps(dispatch) {
   return {
-    // menu: bindActionCreators(menu, dispatch),
+    menu: bindActionCreators(menu, dispatch),
   };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);
-
-
-  // handleClick(e) {
-  //   /**
-  //    * 旧版头部功能
-  //    * 
-  //    * 目前已经停用，留着以后用到时方便
-  //    * 
-  //    */
-  //   console.log('click ', e);
-  //   this.setState({
-  //     current: e.key,
-  //   });
-  // }
-
-  // render () {
-  //   const {user} = this.props
-  //   return (
-  //     <div className='ant-layout-header'>
-  //       <div className="ant-layout-wrapper">
-         
-  //         <Menu className="header-menu" onClick={this.handleClick} style={{lineHeight: '64px'}}
-  //         mode="horizontal">
-  //           <SubMenu title={<span><Icon type="user" />{user.user}</span>}>
-  //             <Menu.Item key="setting:1">选项1</Menu.Item>
-  //             <Menu.Item key="setting:2">选项2</Menu.Item>
-  //             <Menu.Divider />
-  //             <Menu.Item key="setting:3">注销</Menu.Item>
-  //           </SubMenu>
-  //           <Menu.Item key="mail">
-  //             <Icon type="question" />帮助
-  //           </Menu.Item>
-  //         </Menu>
-  //       </div>
-  //     </div>
-  //   )
-  // }

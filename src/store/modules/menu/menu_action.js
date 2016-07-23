@@ -2,7 +2,8 @@ import api from '../../../api';
 import types from '../../types';
 
 import reqwest from 'reqwest';
-import {emptyMenu, caseMenu} from '../../../fake/leftMenu';
+import {emptyMenu, caseMenu} from '../../../feature/leftMenu';
+import topMenu from '../../../feature/topMenu';
 
 /**
  * 顶部菜单切换，更新面包屑 
@@ -32,8 +33,8 @@ export function updateNavPath(path, key) {
 export function getTopMenu() {
   return {
     type: types.GET_TOP_MENU,
-    payload: {
-      promise: api.get('topmenu', {})
+    params: {
+      topMenu: topMenu
     }
   }
 }
