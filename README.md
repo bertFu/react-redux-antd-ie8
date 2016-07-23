@@ -58,7 +58,7 @@ https://github.com/airbnb/javascript
 │           └── components            # 直观React组件
 └── tests                             # 单元测试
 ```
-
+ 
 ## 兼容性
 [antd 官方介绍](http://ant.design/docs/react/getting-started#兼容性)
 

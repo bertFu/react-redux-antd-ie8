@@ -5,7 +5,7 @@ const webpack = require('atool-build/lib/webpack');
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
-
+ 
 module.exports = function(webpackConfig) {
   webpackConfig.babel.plugins.push('transform-runtime');
   webpackConfig.babel.plugins.push(['antd', {
