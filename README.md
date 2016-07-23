@@ -62,7 +62,7 @@ https://github.com/airbnb/javascript
 ## 兼容性
 [antd 官方介绍](http://ant.design/docs/react/getting-started#兼容性)
 
-#### Open `src/enntries/index.html` <br/>
+#### Open `src/entries/index.html` <br/>
 
 对于 IE8/9 等浏览器，需要提供 es5-shim 等 Polyfills 的支持，推荐使用 babel-polyfill。特别对于 IE8 需要配合使用 react@0.14.x 版本。
   ```
