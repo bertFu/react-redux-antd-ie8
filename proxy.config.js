@@ -24,4 +24,14 @@ module.exports = {
       });
     }, 500);
   },
+  '/api/login': function(req, res) {
+    setTimeout(function() {
+      res.json({
+        success: true,
+        data: {
+          user: 'admin'
+        },
+      });
+    }, 500);
+  }
 };

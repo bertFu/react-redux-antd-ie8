@@ -90,7 +90,7 @@ class Sidebar extends React.Component {
 
     return (
       <aside className={styles["ant-layout-sider"]}>
-        <div className={styles["ant-layout-logo"]}><img src={logo} /><span className={styles["nav-text"]}>催费跟踪后台</span></div>
+        <div className={styles["ant-layout-logo"]}><img src={logo} /><span className={styles["nav-text"]}>xxxx后台</span></div>
         <div className={styles["ant-layout-portrait"]}>
           <div className={styles["nav-portrait"]}><img src={touxiang} /></div>
           <div className={styles["nav-portrait-name"]}>admin</div>
