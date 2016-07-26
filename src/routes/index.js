@@ -4,6 +4,7 @@ import App from '../views/App';
 import Home from '../views/Home';
 import Login from '../views/Login';
 import Test from '../views/Test';
+import Feature1 from '../feature/Feature1';
 import NotFound from '../components/NotFound';
 
 function validate() {
@@ -19,6 +20,7 @@ const Routes = ({ history }) =>
         <Route path="home" component={Home}/>
         <Route path="app" component={App}/>
         <Route path="test" component={Test}/>
+        <Route path="feature1" component={Feature1}/>
       </Route>
     </Route>
 

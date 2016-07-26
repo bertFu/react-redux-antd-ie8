@@ -18,5 +18,10 @@ module.exports = [
           key: 'test2',
           name: '404错误',
           icon: 'setting'
+        },
+        {
+          key: 'feature1',
+          name: 'Feature1',
+          icon: 'poweroff'
         }
      ]
