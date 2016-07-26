@@ -11,7 +11,7 @@ let RForm = React.createClass({
         const self = this;
         const RType = this.props.RType;
         return RType ?
-                (<div className="f-search">
+                (<div className="f-search"> 
                     <Form inline>
                         { 
                             RType.map(function(item){
