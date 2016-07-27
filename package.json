@@ -63,8 +63,6 @@
     "karma-spec-reporter": "0.0.23",
     "karma-webpack": "^1.7.0",    
     "mocha": "^2.3.4",
-    "phantomjs": "^1.9.19",
-    "phantomjs-polyfill": "0.0.1",
     "react-addons-test-utils": "^0.14.6",
     "sinon": "^1.17.2"
   },
@@ -73,7 +71,7 @@
     "lint": "eslint --ext .js,.jsx src",
     "start": "dora -p 8001 --plugins   \"webpack,proxy,livereload?enableJs=false&injectHost=127.0.0.1,browser-history?index=/src/entries/index.html\"",
     "test-antd": "atool-test-mocha ./src/**/__tests__/*-test.js",
-    "test": "mocha --compilers js:babel-register --recursive ./tests/test_helper.js",
+    "test":  "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive",
     "test:watch": "npm test -- --watch"
   }
 }
