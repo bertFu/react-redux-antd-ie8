@@ -9,7 +9,7 @@
 * [babel](https://github.com/babel/babel)
 * [antd](http://ant.design)
 
-## Code Style 
+## Code Style   
 
 https://github.com/airbnb/javascript
 
