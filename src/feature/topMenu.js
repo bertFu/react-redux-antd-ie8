@@ -8,5 +8,10 @@ module.exports = [
           key: 'test',
           name: 'Test',
           icon: 'user'
+        },
+        {
+          key: 'loding',
+          name: '加载效果',
+          icon: 'smile-circle'
         }
      ]
