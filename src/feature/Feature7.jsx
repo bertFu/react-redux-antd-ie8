@@ -3,7 +3,7 @@ import React from 'react';
 import { Upload, Icon } from 'antd';
 import baidubce from 'bce-sdk-js';
 
-import BDUploader from '../component/BDUploader';
+import BDUploader from '../components/BDUploader';
 
 const Feature7 = React.createClass({
     getInitialState: function() {

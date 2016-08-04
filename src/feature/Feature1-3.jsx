@@ -1,7 +1,7 @@
 // 纯数据展现情况列表
 import React from 'react';
 
-import FeatureSetConfig from '../component/FeatureSetConfig';
+import FeatureSetConfig from '../components/FeatureSetConfig';
 
 import Immutable from 'immutable';
 import Reqwest from 'reqwest';
